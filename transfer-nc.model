@@ -1,0 +1,5 @@
+From: Valid, Frozen, Missing
+To: Valid, Frozen, Missing, SameAsFrom
+Amount: Normal, EqualBalance, EqualLimit, Zero, Negative, OverBalance, OverLimit
+LimitUsed: None, Partial, Full
+Currency: Same, Different

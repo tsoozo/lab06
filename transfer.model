@@ -1,0 +1,11 @@
+From: Valid, Frozen, Missing
+To: Valid, Frozen, Missing, SameAsFrom
+Amount: Normal, EqualBalance, EqualLimit, Zero, Negative, OverBalance, OverLimit
+LimitUsed: None, Partial, Full
+Currency: Same, Different
+
+# [ERROR]: from/to error is not combined with other errors
+IF [From] <> "Valid" THEN [To] = "Valid" AND [Amount] = "Normal";
+IF [To] IN {"Missing", "SameAsFrom"} THEN [Amount] = "Normal";
+# [property limitFull]: if daily limit is full, any positive amount is over limit
+IF [LimitUsed] = "Full" THEN [Amount] = "OverLimit";
